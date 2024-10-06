@@ -94,6 +94,7 @@ if __name__ == "__main__":
         "get_joke": get_joke
     }
     # multiple functions can be called at the same time, so we must account for that.
+    # In this example we have 2 jokes, each needing a seperate call
     for tool_call in response.tool_calls:
         function_call = tool_call.function.name
         function_args = eval(tool_call.function.arguments)
